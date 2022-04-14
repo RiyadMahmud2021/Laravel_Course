@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\VisitorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
-});
+ 
+Route::get('/', [DashboardController::class, 'dashboardIndex']);
+Route::get('/dashboard', [DashboardController::class, 'dashboardIndex']);
+Route::get('/visitors', [VisitorController::class, 'visitorIndex']);
