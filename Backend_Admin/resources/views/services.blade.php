@@ -1,0 +1,121 @@
+@extends('layouts.app')
+
+
+@section('content')
+
+<div id="mainDiv" class="container d-none">
+    <div class="row">
+        <div class="col-md-12 p-5">
+            <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="th-sm">Image</th>
+                        <th class="th-sm">Name</th>
+                        <th class="th-sm">Description</th>
+                        <th class="th-sm">Edit</th>
+                        <th class="th-sm">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id = "service_table" > 
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="loaderDiv" class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-md-12 p-5 text-center ">
+            <img class="animation_size mt-5" src="{{asset('images/loading-io.svg')}}">
+        </div>
+    </div>
+</div>
+
+<div id="wrongDiv" class="container  mt-5 d-none">
+    <div class="row">
+        <div class="col-md-12 mt-5 p-5 text-center ">
+            <h2>Sorry, Something Went Wrong! See database connection (jq)</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-3 text-center">
+        <h5 class="mt-4">Do You Want To Delete?</h5>
+        <!-- <h5 id="serviceDeleteId" class="mt-4 ">   </h5> -->
+        <!-- <h5 id="serviceDeleteId" class="mt-4 d-none">   </h5> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">No</button>
+        <button data-id='' id="serviceDeleteConfirmBtn" type="button" class="btn  btn-sm  btn-danger">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-body p-3 text-center">
+            <h5 id="" class="mt-4">Edit Services</h5>
+            <div id="mainDivE" class="container mt-5 d-none">
+                <div>
+                    <h1 id="validation01" class="text-center" style="background-color:red;font-size: 20px"></h1>
+                </div>
+                <form>
+                        <div class="form-group">
+                            <input type="service_name" class="form-control" id="service_name" aria-describedby="emailHelp" placeholder="Service Name">
+                            <h1 id="validation" class="text-center" style="color:red;font-size: 20px;"></h1>
+                        </div>
+                        <div class="form-group">
+                            <input type="service_des" class="form-control" id="service_des" placeholder="Service Description">
+                            <h1 id="validation1" class="text-center" style="color:red;font-size: 20px"></h1>
+                        </div>
+                        <div class="form-group">
+                            <input type="" class="form-control" id="service_img" placeholder="Service Image Link">
+                            <h1 id="validation2" class="text-center" style="color:red; font-size: 20px;"></h1>
+                        </div>
+                </form>
+            </div>
+                <div id="loaderDivE" class="container">
+                    <div class="row">
+                        <div class="col-md-12 p-5 text-center ">
+                            <img class="animation_size mt-5" src="{{asset('images/loading-io.svg')}}">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="wrongDivE" class="container  mt-5 d-none">
+                    <div class="row">
+                        <div class="col-md-12 mt-5 p-5 text-center ">
+                            <h2>Sorry, Something Went Wrong! See database connection (jq)</h2>  
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Cancel</button>
+            <button data-id='' id="serviceEditSaveBtn" type="button" class="btn  btn-sm  btn-danger">Save</button>
+        </div> 
+    </div>
+  </div>
+</div>
+
+
+
+
+@endsection
+
+@section('script')
+
+<script type="text/javascript">
+    getServicesD();
+</script>
+
+@endsection 

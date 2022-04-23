@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\VisitorModel;
+use App\Models\ServiceModel;
 
 class HomeController extends Controller
 {
@@ -14,9 +15,10 @@ class HomeController extends Controller
         $timeDate = date("Y-m-d h:i:sa");
 
         VisitorModel::insert(['ip_address'=>$userIp, 'visit_time'=>$timeDate]);
-        
+        $serviceData = ServiceModel::get();
+
         // dd($userIp ); // Laravel dump & die
         // dd($timeDate );
-        return view('home');
+        return view('home', compact('serviceData'));
     }
 }
