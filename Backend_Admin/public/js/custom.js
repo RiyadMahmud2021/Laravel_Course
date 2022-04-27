@@ -36,8 +36,8 @@ $(document).ready(function() {
                  $('.serviceDeleteBtn').click(function() {
                      var id = $(this).data('id');
  
-                     // $('#serviceDeleteId').html(id);
-                     $('#serviceDeleteConfirmBtn').attr('data-id', id);
+                     $('#serviceDeleteId').html(id);
+                     // $('#serviceDeleteConfirmBtn').attr('data-id', id);
                      $('#deleteModal').modal('show');
  
                  })
@@ -46,14 +46,14 @@ $(document).ready(function() {
                 $('.serviceEditBtn').click(function() {
                 var id = $(this).data('id');
 
-                    // $('#serviceDeleteId').html(id);
-
-                    $('#serviceEditSaveBtn').attr('data-id', id);
-                    $('#editModal').modal('show');
+                    $('#serviceEditId').html(id);
                     servicesDetail(id);
+                    // $('#serviceEditSaveBtn').attr('data-id', id);
+                    $('#editModal').modal('show');
+                    
                 })
 
- 
+
              } else {
                  $('#loaderDiv').addClass('d-none');
                  $('#wrongDiv').removeClass('d-none');
@@ -70,42 +70,36 @@ $(document).ready(function() {
 // ------------------------------------------------
 // For Services Delete Modal Yes Button Click
  $('#serviceDeleteConfirmBtn').click(function() {
-     var id = $(this).data('id');
+     var id = $('#serviceDeleteId').html();
+     //var id = $(this).data('id');
      servicesDelete(id);
  })
 // ------------------------------------------------
 
-// ------------------------------------------------
-// For Services Edit Modal Save Button Click
-$('#serviceEditSaveBtn').click(function() {
-    var id = $(this).data('id'); 
-    var name =  $('#service_name').val(); 
-    var des =  $('#service_des').val(); 
-    var img =  $('#service_img').val(); 
-    servicesUpdate(id,name,des,img);
-})
-// ------------------------------------------------
  
 // For Service Delete Function
  function servicesDelete(deleteID) {
+    $('#serviceDeleteConfirmBtn').html("<div class='spinner-border spinner-border-sm text-light' role='status'></div>");
      axios.post('/deleteServices', {
              id: deleteID
          })
          .then(function(response) {
+            $('#serviceDeleteConfirmBtn').html("Yes");
              if (response.data == 1) {
                  //alert('Success');
                  $('#deleteModal').modal('hide');
-                 // toastr.success('Successfully deleted');
+                 toastr.success('Successfully deleted');
                  getServicesD();
              } else {
                  //alert('Failed');
                  $('#deleteModal').modal('hide');
-                 // toastr.error('Failed');
+                 toastr.error('Failed !!! Some is wrong!!!');
                  getServicesD();
              }
          })
          .catch(function(error) {
-             console.log(error);
+            // alert('Some is wrong!!!');
+            toastr.error('Failed !!! Some is wrong!!!');
          })
  }
 
@@ -138,51 +132,93 @@ $('#serviceEditSaveBtn').click(function() {
          
 }
 
+
+// ------------------------------------------------
+// For Services Edit Modal Save Button Click
+$('#serviceEditSaveBtn').click(function() {
+    var id = $('#serviceEditId').html();
+    var name =  $('#service_name').val(); 
+    var des =  $('#service_des').val();
+    var img =  $('#service_img').val(); 
+    servicesUpdate(id,name,des,img);
+})
+// ------------------------------------------------
+
+
 function servicesUpdate(editID,editName,editDes,editImg) {
     
     if( editName.length == 0 ){
-        nameMSG = "Name Required";
-        $('#validation').html(nameMSG);
-    }
-    else{    
-        if(editName.length > 0){
-            $('#validation').hide();
-        }
-    }
-
-    if( editDes.length == 0 ){
-        desMSG = "Description Required";
-        $('#validation1').html(desMSG);
+        // alert('Name Required');
+        toastr.error('Name field is Required...');
+        // $('#serviceEditSaveBtn').click(function() {
+        //     $('#toast_message').toast('show');
+        //     $('#textTaking').html("Name field is Required...");
+        // })
 
     }
-    else{    
-        if(editDes.length > 0){
-            $('#validation1').hide();
-        }
+
+    else if( editDes.length == 0 ){
+        // alert('Descrption Required');
+        toastr.error('Description field is Required...');
+        // $('#serviceEditSaveBtn').click(function() {
+        //     $('#toast_message').toast('show');
+        //     $('#textTaking').html("Description field is Required...");
+        // })
     }
     
-    if( editImg.length == 0 ){
-        imgMSG = "Image Required";
-        $('#validation2').html(imgMSG);
+    else if( editImg.length == 0 ){
+        // alert('Image Required');
+        toastr.error('Image field is Required...');
+        // $('#serviceEditSaveBtn').click(function() {
+        //     $('#toast_message').toast('show');
+        //     $('#textTaking').html("Image field is Required...");
+        // })
     }
-    else{    
-        if(editDes.length > 0){
-            $('#validation1').hide();
-        }
-    }
-    
-    axios.post('/updateServices', {
-            id: editID,
-            name: editName,
-            des: editDes,
-            img: editImg
-    })
-    .then(function(response) {
-        $('#editModal').modal('hide');
-        window.location.reload(true);
-    })
-    .catch(function(error) {
-        console.log(error);
-    })
 
+    else{
+        $('#serviceEditSaveBtn').html("<div class='spinner-border spinner-border-sm text-light' role='status'></div>");
+        axios.post('/updateServices', {
+                id: editID,
+                name: editName,
+                des: editDes,
+                img: editImg
+        })
+        .then(function(response) {  
+           if(response.status == 200){
+            $('#serviceEditSaveBtn').html("Save");
+
+               if( response.data == 1 ){
+                    $('#editModal').modal('hide');
+                    //alert('Updated');
+                    toastr.success('Updated');
+                    // $('#serviceEditSaveBtn').click(function() {
+                    //     $('#textTaking').html("Updated");
+                    //     $('#toast_message').toast('show');
+                    // })
+                    getServicesD();
+               }
+               else{      
+                    $('#editModal').modal('hide');
+                    // alert('Not updated');
+                    toastr.warnig('No Update History');
+                    // $('#serviceEditSaveBtn').click(function() {
+                    //     $('#textTaking').html("Not updated");
+                    //     $('#toast_message').toast('show');
+                    // })
+                    getServicesD(); 
+               }
+
+           }else{
+            $('#editModal').modal('hide');
+            //alert('Some is wrong!!!');
+            toastr.error('Some is wrong!!!');
+           }
+
+        })
+        .catch(function(error) {
+            $('#editModal').modal('hide');
+            //alert('Some is wrong!!!');
+            toastr.error('Some is wrong!!!');
+        })
+    }
 }
