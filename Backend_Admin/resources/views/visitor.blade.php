@@ -28,3 +28,21 @@
 </div>
 
 @endsection
+
+
+
+@section('script')
+
+<script type="text/javascript">
+     // ------------------------------------------------
+     // Visitor Page Table
+     $(document).ready(function() {
+         $('#VisitorDt').DataTable({
+             "order": false
+         }); // .DataTable()
+         $('.dataTables_length').addClass('bs-select');
+     });
+     // ------------------------------------------------
+</script>
+
+@endsection 

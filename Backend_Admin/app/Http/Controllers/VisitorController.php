@@ -9,8 +9,8 @@ class VisitorController extends Controller
 {
     public function visitorIndex(){
         try {
-            $vistorData = VisitorModel::get(); // catch all data
-            // $vistorData = VisitorModel::orderBy('id', 'desc')->get(); // descending data
+            // $vistorData = VisitorModel::get(); // catch all data
+            $vistorData = VisitorModel::orderBy('id', 'desc')->get(); // descending data
             // $vistorData = VisitorModel::orderBy('id','DESC') -> take(10) -> get(); // catch data with limit
             
             // dd($vistorData);

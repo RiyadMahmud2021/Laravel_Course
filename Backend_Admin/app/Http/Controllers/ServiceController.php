@@ -15,7 +15,7 @@ class ServiceController extends Controller
 
     public function getServiceData(){
 
-        $result = ServiceModel::get();
+        $result = ServiceModel::orderBy('id','desc')->get();
         // dd($result);
         return $result;
         
@@ -60,6 +60,29 @@ class ServiceController extends Controller
                                                             'service_img'=>$img     
                                                         ]
                                                     );
+        // // dd($result);
+        if($result == true){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+        
+    }
+
+    public function addServices(Request $req){
+
+        $name = $req->input('name');
+        $des  = $req->input('des');
+        $img  = $req->input('img');
+
+        $result = ServiceModel::insert(
+                                        [   
+                                            'service_name' => $name,
+                                            'service_des'=>$des,
+                                            'service_img'=>$img     
+                                        ]
+                                    );
         // // dd($result);
         if($result == true){
             return 1;
