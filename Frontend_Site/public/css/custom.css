@@ -92,9 +92,9 @@
 
 .service-card-title{
     font-family: 'Hind Siliguri', sans-serif;
-    color: #FF2D20!important;
+    color: rgb(183, 93, 93)!important;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 700;
 }
 .service-card-subTitle{
     font-family: 'Hind Siliguri', sans-serif;
@@ -162,7 +162,7 @@
 }
 
 .parallax {
-    background-image: url("../images/banner.jpg");
+    background-image: url("../images/banner2.jpg");
     min-height: 400px;
     background-attachment: fixed;
     background-position: center;
@@ -215,7 +215,12 @@
     box-shadow: none !important;
     border-radius: 2px !important;
 }
-
+.service-card-title_contact_form{
+    font-family: 'Hind Siliguri', sans-serif;
+    color: rgb(255, 255, 255)!important;
+    font-size: 18px;
+    font-weight: 700;
+}
 .contact-form{
     margin-top: 70px !important;
 }

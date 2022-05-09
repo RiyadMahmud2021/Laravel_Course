@@ -214,10 +214,6 @@ function getProjectData() {
  
  function addProject(ProjectName, ProjectDes, ProjectLink, ProjectImg) {
  
-     $(':input', '#project_form_id').not(':button, :submit, :reset, :hidden')
-         .val('').prop('checked', false)
-         .prop('selected', false);
- 
      if (ProjectName.length == 0) {
          toastr.error('Project Name is Empty !');
      } else if (ProjectDes.length == 0) {
@@ -235,6 +231,11 @@ function getProjectData() {
                  project_img: ProjectImg,
              })
              .then(function(response) {
+                    // form reset code start
+                    $(':input', '#project_form_id').not(':button, :submit, :reset, :hidden')
+                    .val('').prop('checked', false)
+                    .prop('selected', false);
+                    // form reset code end
                  $('#ProjectAddConfirmBtn').html("Save");
                  if (response.status == 200) {
                      if (response.data == 1) {

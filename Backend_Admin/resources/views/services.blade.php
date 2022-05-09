@@ -109,6 +109,7 @@
             <h5 id="" class="mt-4">Add New Services</h5>
             <h5 id="serviceEditId" class="mt-4" hidden>   </h5>
             <div id="mainDivE" class="container mt-3">
+                <div id="service_form_id">
                         <div class="form-group">
                             <input type="service_name" class="form-control" id="add_service_name" aria-describedby="emailHelp" placeholder="Service Name">                         
                         </div>
@@ -118,6 +119,7 @@
                         <div class="form-group">
                             <input type="" class="form-control" id="add_service_img" placeholder="Service Image Link">
                         </div>
+                </div>
             </div>
         </div>
         <div class="modal-footer">
@@ -378,9 +380,6 @@ $('#serviceAddSaveBtn').click(function() {
 // For Add New Service Function
 function servicesAdd(sName, sDes, sImg) {
 
-    $(':input', '#project_form_id').not(':button, :submit, :reset, :hidden')
-        .val('').prop('checked', false)
-        .prop('selected', false);
     if (sName.length == 0) {
         // alert('Name Required');
         toastr.error('Name field is Required...');
@@ -391,6 +390,11 @@ function servicesAdd(sName, sDes, sImg) {
         // alert('Image Required');
         toastr.error('Image field is Required...');
     } else {
+        // form reset code start
+        $(':input', '#service_form_id').not(':button, :submit, :reset, :hidden')
+        .val('').prop('checked', false)
+        .prop('selected', false);
+        // form reset code end
         $('#serviceAddSaveBtn').html("<div class='spinner-border spinner-border-sm text-light' role='status'></div>");
         axios.post('/addServices', {
                 name: sName,
