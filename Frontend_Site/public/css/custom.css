@@ -48,20 +48,28 @@
     background-color: #FF2D20! important;
 }
 
+.top-banner_parallax{
+    background-image: url("../images/besttopbanner.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .top-banner-img{
-    width: 80%;
+    width: 70%;
     height: auto;
 }
 .top-banner-title{
     font-family: 'Hind Siliguri', sans-serif;
-    color: black !important;
-    font-size: 32px;
+    color: black !important; 
+    font-size: 30px;
 }
 .top-banner-subtitle{
     font-family: 'Hind Siliguri', sans-serif;
     color: #6E6E6E !important;
-    font-size: 18px;
+    font-size: 16px;
 }
 .top-banner-subtitle2{
     font-family: 'Hind Siliguri', sans-serif;
@@ -92,7 +100,7 @@
 
 .service-card-title{
     font-family: 'Hind Siliguri', sans-serif;
-    color: rgb(183, 93, 93)!important;
+    color: rgb(199, 36, 36)!important;
     font-size: 18px;
     font-weight: 700;
 }
@@ -162,7 +170,7 @@
 }
 
 .parallax {
-    background-image: url("../images/banner2.jpg");
+    background-image: url("../images/besttopbanner.jpg");
     min-height: 400px;
     background-attachment: fixed;
     background-position: center;
@@ -217,7 +225,7 @@
 }
 .service-card-title_contact_form{
     font-family: 'Hind Siliguri', sans-serif;
-    color: rgb(255, 255, 255)!important;
+    color: rgb(226, 33, 33)!important;
     font-size: 18px;
     font-weight: 700;
 }
@@ -227,11 +235,10 @@
 .help-line-title{
     margin-top: 90px;
     font-family: 'Hind Siliguri', sans-serif;
-    color: white !important;
+    color: rgb(232, 39, 39) !important;
     font-size: 32px !important;
     font-weight: 800 ;
 }
-
 .icon-custom-color{
     color:  #FF2D20!important;
 }
@@ -242,8 +249,8 @@
 .page-top-title{
     font-family: 'Hind Siliguri', sans-serif;
     color: black !important;
-    font-size: 18px !important;
-    font-weight: 400 ;
+    font-size: 20px !important;
+    font-weight: 500 ;
 }
 
 .blog-card-title{

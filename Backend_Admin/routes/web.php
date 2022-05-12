@@ -6,7 +6,8 @@ use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProjectController;
-
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,9 +43,25 @@ Route::post('/updateCourse', [CourseController::class, 'updateCourse']);
 Route::post('/deleteCourse', [CourseController::class, 'deleteCourse']);
 
 // Project Mange
-Route::get('/project', [ProjectController::class, 'projectIndex']);
+Route::get('/projects', [ProjectController::class, 'projectIndex']);
 Route::get('/getProjects', [ProjectController::class, 'getProjectData']);
 Route::post('/addProject', [ProjectController::class, 'addProject']);
 Route::post('/detailProject', [ProjectController::class, 'detailEachProject']);
 Route::post('/updateProject', [ProjectController::class, 'updateProject']);
 Route::post('/deleteProject', [ProjectController::class, 'deleteProject']);
+
+// Contact Mange
+Route::get('/contacts', [ContactController::class, 'contactIndex']);
+Route::get('/getContacts', [ContactController::class, 'getContactData']);
+// Route::post('/addContact', [ProjectController::class, 'addContact']);
+// Route::post('/detailContact', [ProjectController::class, 'detailEachContact']);
+// Route::post('/updateContact', [ProjectController::class, 'updateContact']);
+Route::post('/deleteContact', [ContactController::class, 'deleteContact']);
+
+// Review Manage
+Route::get('/reviews', [ReviewController::class, 'reviewIndex']);
+Route::get('/getReviews', [ReviewController::class, 'getReviewData']);
+Route::post('/addReview', [ReviewController::class, 'addReview']);
+Route::post('/deleteReview', [ReviewController::class, 'deleteReview']);
+Route::post('/reviewDetails', [ReviewController::class, 'getReviewDetails']);
+Route::post('/reviewUpdate',[ReviewController::class, 'reviewUpdate']);

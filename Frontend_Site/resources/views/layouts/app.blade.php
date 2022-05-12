@@ -16,17 +16,15 @@
      <link href="{{asset('css/responsive.css')}}" rel="stylesheet" >
      <link href="{{asset('css/owl.carousel.min.css')}}" rel="stylesheet" >
      <link href="{{asset('css/fontawesome.css')}}" rel="stylesheet">
-     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
-     
+     <link href="{{asset('css/animate.css')}}" rel="stylesheet">  
 </head>
 <body>
 @include('layouts.menu')
 
-
 @yield('content')
 
-
-</div>
+@include('layouts.footer')
+<!-- </div> -->
      <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
      <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
      <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>

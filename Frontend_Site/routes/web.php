@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\TermsController;
+use App\Http\Controllers\PolicyController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +21,13 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'homeIndex']);
 Route::post('/sendContact', [HomeController::class, 'sendContact']);
+
+Route::get('/projects', [ProjectController::class, 'projectIndex']);
+
+Route::get('/courses', [CourseController::class, 'courseIndex']);
+
+Route::get('/policy', [PolicyController::class, 'policyIndex']);
+
+Route::get('/terms', [TermsController::class, 'termsIndex']);
+
+Route::get('/contact', [ContactController::class, 'contactIndex']);

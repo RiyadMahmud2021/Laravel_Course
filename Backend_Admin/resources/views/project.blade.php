@@ -155,7 +155,7 @@ function getProjectData() {
              $('#mainDivProject').removeClass('d-none');
              $('#loaderDivProject').addClass('d-none');
  
-             //$('#ProjectDataTable').DataTable().destroy();
+             $('#ProjectDataTable').DataTable().destroy();
              $('#Project_table').empty();
  
              if (response.status == 200) {
@@ -182,8 +182,8 @@ function getProjectData() {
                      $('#ProjectEditId').html(id);
                      $('#updateProjectModal').modal('show');
                  })
-                 //  $('#ProjectDataTable').DataTable({"order":false});
-                 //  $('.dataTables_length').addClass('bs-select');
+                  $('#ProjectDataTable').DataTable({"order":false});
+                  $('.dataTables_length').addClass('bs-select');
  
              } else {
                  $('#loaderDivProject').addClass('d-none');

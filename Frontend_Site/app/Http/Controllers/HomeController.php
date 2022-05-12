@@ -8,6 +8,7 @@ use App\Models\ServiceModel;
 use App\Models\CourseModel;
 use App\Models\ProjectModel;
 use App\Models\ContactModel;
+use App\Models\ReviewModel;
 
 class HomeController extends Controller
 {
@@ -21,10 +22,11 @@ class HomeController extends Controller
         $serviceData = ServiceModel::get();
         $courseData = CourseModel::orderBy('id','desc')->limit(6)->get();
         $projectData = ProjectModel::orderBy('id','desc')->limit(10)->get();
+        $reviewData = ReviewModel::orderBy('id','desc')->get();
 
         // dd($userIp ); // Laravel dump & die
         // dd($timeDate );
-        return view('home', compact('serviceData','courseData','projectData'));
+        return view('home', compact('serviceData','courseData','projectData','reviewData'));
     }
 
     public function sendContact(Request $request){

@@ -1,6 +1,6 @@
-@section('title', 'Home')
-
 @extends('layouts.app')
+
+@section('title', 'Home')
 
 @section('content')
 
@@ -9,5 +9,6 @@
      @include('Components.homeCourse')
      @include('Components.homeProject')
      @include('Components.homeContact')
+     @include('Components.homeReview')
      
-@endsection
+@endsection 
