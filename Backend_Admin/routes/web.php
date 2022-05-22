@@ -83,5 +83,6 @@ Route::post('/photoDelete', [PhotoGalleryController::class, 'photoDelete'])->mid
 // Login
 Route::get('/', [LoginController::class, 'loginIndex']);
 Route::post('/onLogin', [LoginController::class, 'onLogin']);
+Route::get('/onLogout', [LoginController::class, 'onLogout'])->middleware('loginCheck');
 
 
