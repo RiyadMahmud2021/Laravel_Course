@@ -28,7 +28,7 @@
           - Google Map Location Feature
           - Form feature
           - Footer Section as Home Page
-          
+
 - Site Admin Panel 
      - Login-Logout System with LoginPage
      - Dashboard with Summary
@@ -40,9 +40,10 @@
      - Photo Gallery: All Photos, Adding New, Deleting Options, Load More Options 
      - All Tables Contains: Search Option, Pagination, Page Group Information, Latest Information on First Page  
 
-# Technology and Fetures
+# Technology and Features
      - Laravel MVC and Routing 
      - Laravel ORM
+     - Laravel Middleware 
      - Laravel with Jquery and Axios
 
 # Partial Problem Solving
