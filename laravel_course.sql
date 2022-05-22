@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2022 at 04:16 PM
+-- Generation Time: May 22, 2022 at 11:48 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `laravel_course`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_login`
+--
+
+CREATE TABLE `admin_login` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admin_login`
+--
+
+INSERT INTO `admin_login` (`id`, `name`, `password`, `username`, `email`) VALUES
+(1, 'Riyad Mahmud', 'adminRiyad', 'adminRiyad', 'adminRiyad@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -44,7 +65,9 @@ INSERT INTO `contacts` (`id`, `contact_name`, `contact_mobile`, `contact_email`,
 (4, 'Riyad', '01755935047', 'riyadmahmud2014@gmail.com', 'আমার  একটা সাইট প্রয়োজন... আপনাদের \n কাছে কাজ হস্তান্তর করতে চাই। কি করা যেতে পারে আমাকে জানালে ভাল হয়???'),
 (19, 'SLM', '০১৫০০২১২১৮৫', 'slm.absdba@gmail.com', 'আমার রান্না বিষয়ক সাইট বানানো প্রয়োজন। আপনি কি এটা বানিয়ে দিতে পারবেন বিনা পয়সায়।'),
 (23, 'বলবো না', 'বলবো না', 'বলবো না', 'বলবো না'),
-(24, 'বলবো না', 'বলবো না', 'বলবো না', 'বলবো না');
+(24, 'বলবো না', 'বলবো না', 'বলবো না', 'বলবো না'),
+(25, 'Riyad', '01548545246', 'riyad@gmail.com', 'I need a website. Please help me.'),
+(26, 'Riyad', '01521464645', 'riyad@gmail.com', 'I need a site. Can you help me ???');
 
 -- --------------------------------------------------------
 
@@ -68,12 +91,12 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `course_name`, `course_des`, `course_fee`, `course_totalenroll`, `course_totalclass`, `course_link`, `course_img`) VALUES
-(2, 'রিয়েক্ট এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '56', '56', 'yyhgfuyru', 'http://127.0.0.1/images/react.jpg'),
-(7, 'কোডইগনিটার এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '1500', '75', '120', 'fghghgh', 'http://127.0.0.1/images/codeigniter.png'),
-(19, 'রিয়েক্ট এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '56', '56', 'yyhgfuyru', 'http://127.0.0.1/images/react.jpg'),
-(20, 'লারাভেল এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '81', '120', 'ttrtrtrtr', 'http://127.0.0.1/images/Laravel.png'),
-(25, 'পিএসডি এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '64', '100', 'ghjhgj', 'http://127.0.0.1/images/PSD-to-HTML.jpg'),
-(39, 'লারাভেল এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '81', '120', 'ttrtrtrtr', 'http://127.0.0.1/images/Laravel.png');
+(2, 'রিয়েক্ট এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '56', '56', 'yyhgfuyru', 'http://127.0.0.1:4000/storage/Fj6ArlGscymNVPmVLkerdVDefd2Wn0P2GNTykInq.jpg'),
+(7, 'কোডইগনিটার এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '1500', '75', '120', 'fghghgh', 'http://127.0.0.1:4000/storage/cUm8Bjff1KnJTmLQUjtQOjfZ3t3Ie5IGAzjJevCZ.png'),
+(19, 'রিয়েক্ট এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '56', '56', 'yyhgfuyru', 'http://127.0.0.1:4000/storage/Fj6ArlGscymNVPmVLkerdVDefd2Wn0P2GNTykInq.jpg'),
+(20, 'লারাভেল এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '81', '120', 'ttrtrtrtr', 'http://127.0.0.1:4000/storage/CYXO5ZZSVRyCuJZ43Yg5M7uQ4WX9LdVMOFNqZ7qq.webp'),
+(25, 'পিএসডি এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '64', '100', 'ghjhgj', 'http://127.0.0.1:4000/storage/XoBU5d5wUbscih6zI401R6z2hjhpq6Xpa5PBTdHJ.jpg'),
+(39, 'লারাভেল এবং প্রোজেক্ট', 'আইটি কোর্স, প্রজেক্ট ভিত্তিক সোর্স কোড সহ আরো যে সকল সার্ভিস আমরা প্রদান করি', '2000', '81', '120', 'ttrtrtrtr', 'http://127.0.0.1:4000/storage/CYXO5ZZSVRyCuJZ43Yg5M7uQ4WX9LdVMOFNqZ7qq.webp');
 
 -- --------------------------------------------------------
 
@@ -98,7 +121,52 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2022_04_28_101435_create_course_models_table', 3),
 (5, '2022_04_29_202422_create_project_models_table', 4),
 (6, '2022_04_30_130800_create_contact_models_table', 5),
-(7, '2022_05_11_064401_create_review_models_table', 6);
+(7, '2022_05_11_064401_create_review_models_table', 6),
+(8, '2022_05_16_132322_create_login_models_table', 7),
+(9, '2022_05_18_194557_create_photo_models_table', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `photos`
+--
+
+CREATE TABLE `photos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `photos`
+--
+
+INSERT INTO `photos` (`id`, `location`) VALUES
+(1, 'http://127.0.0.1:4000/storage/2IGxgMvFA9cecrU8Q0VjKUGwOeACIslxlRVIpHTe.jpg'),
+(2, 'http://127.0.0.1:4000/storage/9G92R6n9ZJ4SicgpbP3XwVwpN9ENkM9w6QR3M1vv.jpg'),
+(3, 'http://127.0.0.1:4000/storage/CQKcuyWRZ0W3KyWK07KCj3ZEeyN88Gej5jgBFazx.png'),
+(4, 'http://127.0.0.1:4000/storage/tXPQkPCPuy2iXHaqEtv39GYAsvqxHoA3faHBCR6A.svg'),
+(5, 'http://127.0.0.1:4000/storage/4y6UB1kTONHskS7YpPbjfH7UKrDAdpf8oQm7UU3u.jpg'),
+(6, 'http://127.0.0.1:4000/storage/2IvB6X0rOrrrYyW7wIbZ5A9DGHSIf1B2JydF6wcx.jpg'),
+(7, 'http://127.0.0.1:4000/storage/9wrALrRhveUBZQsLfkFwe0OJfd1l8zuD7BGw1i8v.jpg'),
+(8, 'http://127.0.0.1:4000/storage/P4K5nmUoZvTK7V78tQKfA3hITQuI3iQWESOJ5cso.png'),
+(9, 'http://127.0.0.1:4000/storage/vUHfdtO0flmhWtI4XaymifoNWlHXs9VAakt2TFFb.svg'),
+(10, 'http://127.0.0.1:4000/storage/cUm8Bjff1KnJTmLQUjtQOjfZ3t3Ie5IGAzjJevCZ.png'),
+(11, 'http://127.0.0.1:4000/storage/wsl3tqTbd6yQvePJVl6gcY4YtGeeFIbdRueUjlLw.svg'),
+(12, 'http://127.0.0.1:4000/storage/lCGEKTptxrflV9UhW1DdHkqNcS6bZj1ja6qFnx7w.png'),
+(13, 'http://127.0.0.1:4000/storage/BDa2kPL0Lv33BWKMVgDWwvF93X39c8VWWFCSD5RI.svg'),
+(14, 'http://127.0.0.1:4000/storage/OYuEG441r7LjGgqKEjpNWiemUzL83d4LKw0N6zEy.png'),
+(15, 'http://127.0.0.1:4000/storage/OJxhluLUzeyPM4s0xGBtIQn21ijFUPCUn2uafcju.svg'),
+(16, 'http://127.0.0.1:4000/storage/jAoO0o7RRRUsXX1oadJDF4meyvRmDZjuHWDGlEc4.jpg'),
+(17, 'http://127.0.0.1:4000/storage/CYXO5ZZSVRyCuJZ43Yg5M7uQ4WX9LdVMOFNqZ7qq.webp'),
+(18, 'http://127.0.0.1:4000/storage/TkRfW0UNQsVE6HNZBAv4ElY63m6PxSzSViDfOQBL.png'),
+(19, 'http://127.0.0.1:4000/storage/ciC05UP16Hx6ddDTnWJFW8RrCbRVklOrOIxg6pC3.svg'),
+(20, 'http://127.0.0.1:4000/storage/NoKYR5VX1bllYeZ3FIlCR6t3axuKv8O3UAL5EQxm.jpg'),
+(21, 'http://127.0.0.1:4000/storage/asOtAzEHspWaDAD7dr6VQgtvzTgz9WcrabU9lMnD.png'),
+(22, 'http://127.0.0.1:4000/storage/XoBU5d5wUbscih6zI401R6z2hjhpq6Xpa5PBTdHJ.jpg'),
+(23, 'http://127.0.0.1:4000/storage/Fj6ArlGscymNVPmVLkerdVDefd2Wn0P2GNTykInq.jpg'),
+(24, 'http://127.0.0.1:4000/storage/h0LJkPAnW1hFZDIyDKzr0Z4jAzDzxFeG8PF4W5bn.png'),
+(25, 'http://127.0.0.1:4000/storage/xqLKsvn5bdgJxpOqxeGGA0SbsISD2FJFaRfdjYAl.png'),
+(26, 'http://127.0.0.1:4000/storage/lxYIv7bvjGB0SU5khgUPS53j8z6Xf1lMboSSyKNz.png');
 
 -- --------------------------------------------------------
 
@@ -119,10 +187,10 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `project_name`, `project_desc`, `project_link`, `project_img`) VALUES
-(1, 'আইটি কোর্স3', 'মোবাইল  এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট', 'www.riyad.com', 'http://127.0.0.1/images/project-management.png'),
-(2, 'আইটি কোর্স2', 'মোবাইল  এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট', 'www.riyad.com', 'http://127.0.0.1/images/project-management.png'),
-(3, 'আইটি কোর্স1', 'মোবাইল  এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট', 'www.riyad.com', 'http://127.0.0.1/images/project-management.png'),
-(17, 'রান্না কোর্স', 'রান্না কোর্সের ইন্সট্রাকটর সালমা মাহমুদ', 'efrtff', 'http://127.0.0.1/images/project-management.png');
+(1, 'আইটি কোর্স3', 'মোবাইল  এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট', 'www.riyad.com', 'http://127.0.0.1:4000/storage/asOtAzEHspWaDAD7dr6VQgtvzTgz9WcrabU9lMnD.png'),
+(2, 'আইটি কোর্স2', 'মোবাইল  এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট', 'www.riyad.com', 'http://127.0.0.1:4000/storage/asOtAzEHspWaDAD7dr6VQgtvzTgz9WcrabU9lMnD.png'),
+(3, 'আইটি কোর্স1', 'মোবাইল  এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট', 'www.riyad.com', 'http://127.0.0.1:4000/storage/asOtAzEHspWaDAD7dr6VQgtvzTgz9WcrabU9lMnD.png'),
+(17, 'রান্না কোর্স', 'রান্না কোর্সের ইন্সট্রাকটর সালমা মাহমুদ', 'efrtff', 'http://127.0.0.1:4000/storage/asOtAzEHspWaDAD7dr6VQgtvzTgz9WcrabU9lMnD.png');
 
 -- --------------------------------------------------------
 
@@ -142,10 +210,10 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `name`, `des`, `img`) VALUES
-(1, 'Riyad 2', 'একজন প্রোফেশনাল ডেভলপার,একজন প্রোফেশনাল ডেভলপার,একজন প্রোফেশনাল ডেভলপার', 'http://localhost/images/riyadPic.png'),
-(2, 'Mahmud 2', 'একজন প্রোফেশনাল ডেভলপার,একজন প্রোফেশনাল ডেভলপার,একজন প্রোফেশনাল ডেভলপার', 'http://localhost/images/riyad_pic1.png'),
-(5, 'Riyad 1', 'একজন প্রোফেশনাল ডেভলপার,একজন প্রোফেশনাল ডেভলপার,একজন প্রোফেশনাল ডেভলপার', 'http://localhost/images/riyadPic.png'),
-(6, 'Mahmud 1', 'একজন প্রোফেশনাল ডেভলপার,একজন প্রোফেশনাল ডেভলপার,একজন প্রোফেশনাল ডেভলপার', 'http://localhost/images/riyad_pic1.png');
+(1, 'Riyad 2', 'একজন প্রোফেশনাল ডেভলপার হিসেবে ভাল কাজ করেছে', 'http://127.0.0.1:4000/storage/lxYIv7bvjGB0SU5khgUPS53j8z6Xf1lMboSSyKNz.png'),
+(2, 'Mahmud 2', 'একজন প্রোফেশনাল ডেভলপার হিসেবে ভাল কাজ করেছে', 'http://127.0.0.1:4000/storage/xqLKsvn5bdgJxpOqxeGGA0SbsISD2FJFaRfdjYAl.png'),
+(5, 'Riyad 1', 'একজন প্রোফেশনাল ডেভলপার হিসেবে ভাল কাজ করেছে', 'http://127.0.0.1:4000/storage/lxYIv7bvjGB0SU5khgUPS53j8z6Xf1lMboSSyKNz.png'),
+(6, 'Mahmud 1', 'একজন প্রোফেশনাল ডেভলপার হিসেবে ভাল কাজ করেছে', 'http://127.0.0.1:4000/storage/xqLKsvn5bdgJxpOqxeGGA0SbsISD2FJFaRfdjYAl.png');
 
 -- --------------------------------------------------------
 
@@ -165,14 +233,14 @@ CREATE TABLE `service` (
 --
 
 INSERT INTO `service` (`id`, `service_name`, `service_des`, `service_img`) VALUES
-(3, 'সোর্স কোড22', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট22', 'http://localhost/images/custom.svg'),
-(68, 'সোর্স কোড33', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট33', 'http://localhost/images/custom.svg'),
-(71, 'সোর্স কোড44', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট44', 'http://localhost/images/custom.svg'),
-(74, 'সোর্স কোড11', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট11', 'http://localhost/images/custom.svg'),
+(3, 'সোর্স কোড22', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট22', 'http://127.0.0.1:4000/storage/wsl3tqTbd6yQvePJVl6gcY4YtGeeFIbdRueUjlLw.svg'),
+(68, 'সোর্স কোড33', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট33', 'http://127.0.0.1:4000/storage/wsl3tqTbd6yQvePJVl6gcY4YtGeeFIbdRueUjlLw.svg'),
+(71, 'সোর্স কোড44', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট44', 'http://127.0.0.1:4000/storage/wsl3tqTbd6yQvePJVl6gcY4YtGeeFIbdRueUjlLw.svg'),
+(74, 'সোর্স কোড11', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট11', 'http://127.0.0.1:4000/storage/wsl3tqTbd6yQvePJVl6gcY4YtGeeFIbdRueUjlLw.svg'),
 (75, 'সোর্স কোড22', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট22', 'http://localhost/images/custom.svg'),
-(76, 'সোর্স কোড33', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট33', 'http://localhost/images/custom.svg'),
-(77, 'সোর্স কোড44', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট44', 'http://localhost/images/custom.svg'),
-(78, 'সোর্স কোড11', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট11', 'http://localhost/images/custom.svg');
+(76, 'সোর্স কোড33', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট33', 'http://127.0.0.1:4000/storage/wsl3tqTbd6yQvePJVl6gcY4YtGeeFIbdRueUjlLw.svg'),
+(77, 'সোর্স কোড44', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট44', 'http://127.0.0.1:4000/storage/wsl3tqTbd6yQvePJVl6gcY4YtGeeFIbdRueUjlLw.svg'),
+(78, 'সোর্স কোড11', 'ওয়েব সাইট এবং ওয়েব এপ্লিকেশন ডেভেলপমেন্ট11', 'http://127.0.0.1:4000/storage/wsl3tqTbd6yQvePJVl6gcY4YtGeeFIbdRueUjlLw.svg');
 
 -- --------------------------------------------------------
 
@@ -695,11 +763,59 @@ INSERT INTO `visitor` (`id`, `ip_address`, `visit_time`) VALUES
 (502, '127.0.0.1', '2022-05-12 07:45:19pm'),
 (503, '127.0.0.1', '2022-05-12 07:45:22pm'),
 (504, '127.0.0.1', '2022-05-12 07:45:25pm'),
-(505, '127.0.0.1', '2022-05-12 07:45:48pm');
+(505, '127.0.0.1', '2022-05-12 07:45:48pm'),
+(506, '127.0.0.1', '2022-05-12 08:19:25pm'),
+(507, '127.0.0.1', '2022-05-12 08:19:35pm'),
+(508, '127.0.0.1', '2022-05-22 02:47:01am'),
+(509, '127.0.0.1', '2022-05-22 02:58:31am'),
+(510, '127.0.0.1', '2022-05-22 03:00:10am'),
+(511, '127.0.0.1', '2022-05-22 03:00:42am'),
+(512, '127.0.0.1', '2022-05-22 03:01:40am'),
+(513, '127.0.0.1', '2022-05-22 03:03:46am'),
+(514, '127.0.0.1', '2022-05-22 03:03:50am'),
+(515, '127.0.0.1', '2022-05-22 03:04:28am'),
+(516, '127.0.0.1', '2022-05-22 03:06:26am'),
+(517, '127.0.0.1', '2022-05-22 03:07:04am'),
+(518, '127.0.0.1', '2022-05-22 03:07:35am'),
+(519, '127.0.0.1', '2022-05-22 03:07:38am'),
+(520, '127.0.0.1', '2022-05-22 03:08:06am'),
+(521, '127.0.0.1', '2022-05-22 03:10:10am'),
+(522, '127.0.0.1', '2022-05-22 03:10:55am'),
+(523, '127.0.0.1', '2022-05-22 03:14:09am'),
+(524, '127.0.0.1', '2022-05-22 03:14:36am'),
+(525, '127.0.0.1', '2022-05-22 03:14:52am'),
+(526, '127.0.0.1', '2022-05-22 03:14:59am'),
+(527, '127.0.0.1', '2022-05-22 03:15:12am'),
+(528, '127.0.0.1', '2022-05-22 03:15:24am'),
+(529, '127.0.0.1', '2022-05-22 03:15:44am'),
+(530, '127.0.0.1', '2022-05-22 03:17:19am'),
+(531, '127.0.0.1', '2022-05-22 03:17:51am'),
+(532, '127.0.0.1', '2022-05-22 03:18:01am'),
+(533, '127.0.0.1', '2022-05-22 03:18:41am'),
+(534, '127.0.0.1', '2022-05-22 03:20:00am'),
+(535, '127.0.0.1', '2022-05-22 03:20:04am'),
+(536, '127.0.0.1', '2022-05-22 03:20:13am'),
+(537, '127.0.0.1', '2022-05-22 03:22:11am'),
+(538, '127.0.0.1', '2022-05-22 03:22:18am'),
+(539, '127.0.0.1', '2022-05-22 03:22:22am'),
+(540, '127.0.0.1', '2022-05-22 03:22:47am'),
+(541, '127.0.0.1', '2022-05-22 03:23:29am'),
+(542, '127.0.0.1', '2022-05-22 03:24:02am'),
+(543, '127.0.0.1', '2022-05-22 03:45:36pm'),
+(544, '127.0.0.1', '2022-05-22 03:46:01pm'),
+(545, '127.0.0.1', '2022-05-22 03:46:08pm'),
+(546, '127.0.0.1', '2022-05-22 03:46:41pm'),
+(547, '127.0.0.1', '2022-05-22 03:46:47pm');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin_login`
+--
+ALTER TABLE `admin_login`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `contacts`
@@ -717,6 +833,12 @@ ALTER TABLE `courses`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `photos`
+--
+ALTER TABLE `photos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -748,10 +870,16 @@ ALTER TABLE `visitor`
 --
 
 --
+-- AUTO_INCREMENT for table `admin_login`
+--
+ALTER TABLE `admin_login`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `courses`
@@ -763,7 +891,13 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `photos`
+--
+ALTER TABLE `photos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `projects`
@@ -775,7 +909,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `service`
@@ -787,7 +921,7 @@ ALTER TABLE `service`
 -- AUTO_INCREMENT for table `visitor`
 --
 ALTER TABLE `visitor`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=506;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=548;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

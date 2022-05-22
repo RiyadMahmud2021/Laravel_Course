@@ -10,3 +10,65 @@ padding: 1% 1% 1% 1% ;
 	width:80px;
 	height:auto;
 }
+.page-wrapper_for_app1 {
+	margin-left: 200px;
+ }
+
+
+ body{
+     font-family: 'Raleway', sans-serif !important;
+     font-weight: 300 !important;
+     color: #67757c !important;
+     background-color:#ffffff!important;
+ }
+ 
+ .wrapper-padding{
+
+     padding: 1% 1% 1% 1%;
+
+ }
+ .table-img{
+      width:60px;
+      height:auto;
+ }
+ 
+ .loading-icon{
+      width:100px;
+      height:auto;
+ }
+ 
+ .form-control:focus {
+   border-color: #FF0000;  
+ }
+ 
+ .count-card-text{
+      font-size: 14px;
+ }
+ .count-card-title{
+      font-size: 24px;
+ }
+ 
+ .center-screen {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   min-height: 100vh;
+ }
+ 
+ .imgPreview{
+     border: none;
+     width: 100%;
+     object-fit: cover;
+     height: 320px;
+     padding: 0px;
+ }
+ 
+ .imgOnRow{
+     border: none !important;
+     width: 100%;
+     object-fit: cover;
+     height: 320px;
+     padding-bottom: 20px;
+ }

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Error')
 
 @section('content')
 <div id="wrongDiv" class="container  mt-5">

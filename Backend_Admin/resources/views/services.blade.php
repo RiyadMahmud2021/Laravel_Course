@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Services')
 
 @section('content')
 
@@ -161,7 +161,7 @@ function getServicesD() {
                 $('#service_table').empty(); // helps to avoid cloning data at the time of deleting data
 
                 var alldata = response.data;
-                $.each(alldata, function(i, item) {
+                $.each(alldata, function(i, item) { // We use "i" as "single row number"
                     $('<tr>').html(
                         "<td class='th-sm'><img class='table-img' src=" + alldata[i].service_img + "></td>" +
                         "<td class='th-sm'>" + alldata[i].service_name + "</td>" +

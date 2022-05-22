@@ -32,7 +32,7 @@ class ServiceController extends Controller
         else{
             return 0;
         }
-        
+           
     }
 
     public function detailEachServices(Request $req){

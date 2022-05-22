@@ -1,4 +1,5 @@
 <div class="container section-marginTop text-center">
+<h1 class="section-title text-center">মন্তব্য</h1>
     <div class="row d-flex justify-content-center">
         <div class="col-md-6 text-center pt-5">
             <div id="two" class="owl-carousel mb-4 owl-theme">
