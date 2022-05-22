@@ -47,7 +47,6 @@
     color:  white ! important;
     background-color: #FF2D20! important;
 }
-
 .top-banner_parallax{
     background-image: url("../images/besttopbanner.jpg");
     min-height: 500px;
@@ -56,7 +55,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .top-banner-img{
     width: 70%;
     height: auto;
