@@ -10,7 +10,7 @@
 
 - Project zipping
 - Database exporting from xampp 'localhost/phpmyadmin'
-- Go to host seller website login and go to cpanel
+- Go to host seller website, login and go to cpanel
 - On cpanel "Select PHP Version" (Respect of Framework support)
 - Database creating on cpanel 'mysql database'
      - Database name creation
