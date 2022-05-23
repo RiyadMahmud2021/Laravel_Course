@@ -14,8 +14,8 @@ class PhotoGalleryController extends Controller
 
     function photoUpload(Request $request){
         $photoPath = $request->file('photo')->store('public');
-        // The explode() function breaks a string into an array. Note: The "separator" parameter cannot be an empty string. Note: This function is binary-safe. 
         
+        // The explode() function breaks a string into an array. Note: The "separator" parameter cannot be an empty string. Note: This function is binary-safe. 
         $photoName = (explode('/',$photoPath))[1];
         $host = $_SERVER['HTTP_HOST'];
         $location = "http://".$host."/storage/".$photoName;

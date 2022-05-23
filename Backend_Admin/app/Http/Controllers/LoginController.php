@@ -21,7 +21,7 @@ class LoginController extends Controller
              $request->session()->put('user',$user);
              return 1;
          }
-         else{
+         else{ 
              return 0;
          }
  

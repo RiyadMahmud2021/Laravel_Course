@@ -145,11 +145,10 @@ function getReviewData() {
                         "<td><a class='ReviewDeleteBtn' data-id="+dataz[i].id+"><i class='fas fa-trash-alt'></i></a></td>"
                     ).appendTo('#Review_table');
                 });
-                     $('.ReviewDeleteBtn').click(function(){
-                       
-                      var id= $(this).data('id');
-                     $('#ReviewDeleteId').html(id);
-                     $('#deleteReviewModal').modal('show');
+                     $('.ReviewDeleteBtn').click(function(){                      
+                         var id= $(this).data('id');
+                         $('#ReviewDeleteId').html(id);
+                         $('#deleteReviewModal').modal('show');
                      })
                      $('.ReviewEditBtn').click(function(){
                         var id= $(this).data('id');

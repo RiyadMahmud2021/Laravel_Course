@@ -24,10 +24,10 @@ class ReviewController extends Controller
         $Review_desc= $req->input('Review_desc');
         $Review_img = $req->input('Review_img');
         $result= ReviewModel::insert([
-            'name'=>$Review_name,
-            'des'=>$Review_desc,
-            'img'=>$Review_img,
-        ]);
+                                    'name'=>$Review_name,
+                                    'des'=>$Review_desc,
+                                    'img'=>$Review_img,
+                                ]);
    
         if($result==true){      
           return 1;

@@ -90,7 +90,7 @@
                                 "<td>" + dataz[i].contact_msg + "</td>" +
                                 "<td><a class='ContactDeleteBtn' data-id=" + dataz[i].id + "><i class='fas fa-trash-alt'></i></a></td>"
                             ).appendTo('#Contact_table');
-                        });
+                        }); 
                         $('.ContactDeleteBtn').click(function(){ 
                             var id= $(this).data('id');
                             $('#ContactDeleteId').html(id);
